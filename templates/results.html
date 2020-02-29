@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href= "{% static 'css/style.css' %}"/>
+    <title>Title</title>
+</head>
+<body>
+<h2>Hello I Am Abu Bakkar siddik</h2>
+{{insert_content}}
+
+<div class="mytable">
+    {% if access_record %}
+    <table>
+        <thead>
+        <th>Site Name</th>
+        <th>Date Access</th>
+        </thead>
+        {% for list in access_record %}
+        <tr>
+            <td>{{list.name}}</td>
+            <td>{{list.date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>There Are no Records!!!!</p>
+    {% endif %}
+</div>
+</body>
+</html>
